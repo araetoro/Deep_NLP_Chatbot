@@ -120,7 +120,7 @@ questions_to_int = []
 
 for questions in clean_questions:
     ints = []
-    for word in question.split():
+    for word in questions.split():
         if word not in questionswords2int:
             ints.append(questionswords2int['<OUT>'])
         else:
@@ -139,21 +139,15 @@ for answer in clean_answers:
     answers_to_int.append(ints)
 
 #sorting questions and answers by the length of questions
-sorted_clean_questoins = []
+sorted_clean_questions = []
 sorted_clean_answers = []
 
 for length in range(1,26):
+    for i in enumerate(questions_to_int):
+        if len(i[1]) == length:
+            sorted_clean_questions.append(questions_to_int[i[0]])
+            sorted_clean_answers.append(answers_to_int[i[0]])
     
-
-
-
-
-
-
-
-
-
-#and Replacing all the words that were filtered out by <OUT>
     
 
   
